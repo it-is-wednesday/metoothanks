@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+		android:id="@+id/action_image_rotate_counterclockwise"
+		android:icon="@drawable/icon_image_rotate_counterclockwise"
+		android:title="@string/action_image_rotate_counterclockwise"
+		app:showAsAction="always"/>
+	<item
+		android:id="@+id/action_image_rotate_clockwise"
+		android:icon="@drawable/icon_image_rotate_clockwise"
+		android:title="@string/action_image_rotate_clockwise"
+		app:showAsAction="always"/>
+</menu>
