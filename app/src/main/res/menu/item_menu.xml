@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+		android:id="@+id/action_item_delete"
+		android:icon="@drawable/icon_item_delete"
+		android:title="@string/action_delete"
+		app:showAsAction="always"/>
+	<item
+		android:id="@+id/action_item_move_backward"
+		android:icon="@drawable/icon_item_move_backward"
+		android:title="@string/action_item_move_backward"
+		app:showAsAction="always"/>
+	<item
+		android:id="@+id/action_item_move_forward"
+		android:icon="@drawable/icon_item_move_forward"
+		android:title="@string/action_item_move_forward"
+		app:showAsAction="always"/>
+</menu>
