@@ -52,7 +52,6 @@ fun checkExternalMedia(): Boolean {
 	val mExternalStorageAvailable: Boolean
 	val mExternalStorageWritable: Boolean
 	val state = Environment.getExternalStorageState()
-	var message = ""
 	
 	if (Environment.MEDIA_MOUNTED.equals(state)) {
 		// Can read and write the media
@@ -62,12 +61,10 @@ fun checkExternalMedia(): Boolean {
 		// Can only read the media
 		mExternalStorageAvailable = true
 		mExternalStorageWritable = false
-		message = "External storage is available but not writeable :("
 	} else {
 		// Can't read or write
 		mExternalStorageWritable = false
 		mExternalStorageAvailable = mExternalStorageWritable
-		message = "External storage isn't available :("
 	}
 	
 	return mExternalStorageAvailable && mExternalStorageWritable

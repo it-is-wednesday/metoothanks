@@ -83,7 +83,7 @@ class Text(text: String, canvasWidth: Int, hostView: CanvasView) :
 			val stringBuilder = StringBuilder()
 			var widthSum = 0
 			
-			for (s in originalText!!.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()) {
+			for (s in originalText.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()) {
 				if (s != "\n")
 					widthSum += textPaint.measureText(s + " ").toInt()
 				if (widthSum > width) {
@@ -101,7 +101,7 @@ class Text(text: String, canvasWidth: Int, hostView: CanvasView) :
 		fun draw(left: Int, top: Int, right: Int, canvas: Canvas) {
 			// since canvas.drawText() doesn't draw multiline text properly,
 			// we'll draw each line separately
-			val strings = text!!.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+			val strings = text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
 			for (i in strings.indices) {
 				val xPosition = when (alignment) {
 					ALIGNMENT_LEFT -> left.toFloat()
