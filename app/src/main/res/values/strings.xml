@@ -1,9 +1,9 @@
 <resources>
 	<string name="app_name">metoothanks</string>
-	<string name="update_availabe">Hey, looks like you\'ve got an outdated version!</string>
-	<string name="update_now">woah let\'s update</string>
+	<string name="update_availabe">Hey, looks like you\'ve got an outdated version! Would you like to update?</string>
+	<string name="update_now">yes please</string>
 	
-	<string name="ignore">lmao who cares</string>
+	<string name="ignore">no thanks</string>
 	
 	<string name="update_url">https://github.com/tag-them/metoothanks/releases</string>
 
