@@ -44,8 +44,8 @@ class Draw : AppCompatActivity() {
 			}
 			action_add_text  -> {
 				openTextInputDialog {
+					println("hh")
 					layout.canvas_view.addText(it)
-					toast(it)
 				}
 			}
 			action_export    ->
@@ -56,7 +56,6 @@ class Draw : AppCompatActivity() {
 				if (checkExternalMedia())
 					ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
 										    SHARE_IMAGE_REQUEST_CODE)
-			
 		}
 		
 		return super.onOptionsItemSelected(item)

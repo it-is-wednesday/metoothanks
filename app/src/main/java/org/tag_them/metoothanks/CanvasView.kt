@@ -184,7 +184,7 @@ class CanvasView : View {
 		itemToolbar.visibility = Toolbar.INVISIBLE
 	}
 	
-	fun Item.addToItems() = items.add(this).run { select(); invalidate() }
+	fun Item.addToItems() = items.add(this).run { select(); invalidate();  }
 	
 	fun Item.removeFromItems() = items.remove(this).run { selectNone(); invalidate() }
 }

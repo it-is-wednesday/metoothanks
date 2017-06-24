@@ -39,20 +39,25 @@ class Text(text: String, canvasWidth: Int, hostView: CanvasView) :
 	// makes sure the actual text fits the item's width
 	val width_fitter = thread {
 		while (true) {
-			Thread.sleep(WIDTH_FIX_INTERVAL);
+			Thread.sleep(WIDTH_FIX_INTERVAL)
 			
-			val width = Math.min(width, canvasWidth);
-			textString.fitToWidth(width);
-			right = left + width;
+			val width = Math.min(width, canvasWidth)
+			textString.fitToWidth(width)
+			right = left + width
 			
-			val textHeight = calculateTextHeight(text, textString.fontSize);
+			val textHeight = calculateTextHeight(text, textString.fontSize)
 			if (this.height < textHeight)
-				bottom = top + textHeight;
+				bottom = top + textHeight
 		}
-	}.start()
+	}
+	
+	init {
+		if (width_fitter.state == Thread.State.NEW)
+			width_fitter.start()
+	}
 	
 	override fun draw(canvas: Canvas) {
-		textString.draw(left, top, right, canvas);
+		textString.draw(left, top, right, canvas)
 	}
 	
 	
@@ -68,7 +73,7 @@ class Text(text: String, canvasWidth: Int, hostView: CanvasView) :
 			
 			textPaint = TextPaint()
 			textPaint.isAntiAlias = true
-			textPaint.textSize = DEFAULT_TEXT_SIZE.toFloat()
+			textPaint.textSize = DEFAULT_TEXT_SIZE
 			textPaint.color = 0xFF000000.toInt()
 			
 			alignment = ALIGNMENT_LEFT
