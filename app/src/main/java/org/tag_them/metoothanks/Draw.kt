@@ -24,6 +24,8 @@ class Draw : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		layout.setContentView(this)
 		setSupportActionBar(layout.toolbar)
+		
+		checkForNewVersion(this)
 	}
 	
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {
