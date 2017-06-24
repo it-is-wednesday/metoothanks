@@ -56,9 +56,7 @@ fun calculateTextHeight(text: String, textSize: Float): Int {
 	return (lines * textSize).toInt()
 }
 
-fun Context.openTextInputDialog(action: (text_gotten: String) -> Unit) = openTextInputDialog("", action)
-
-fun Context.openTextInputDialog(initialText: String, action: (text_gotten: String) -> Unit) {
+fun Context.openTextInputDialog(initialText: String = "", action: (text_gotten: String) -> Unit) {
 	var textbox: EditText? = null
 	(this.alert {
 		customView {

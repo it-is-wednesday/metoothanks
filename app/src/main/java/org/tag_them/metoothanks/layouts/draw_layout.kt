@@ -29,7 +29,6 @@ class draw_layout() : AnkoComponent<Draw> {
 				setTitleTextColor(Color.WHITE)
 			}
 			
-			
 			canvas_view = canvasView {}
 			
 			item_toolbar = toolbar {

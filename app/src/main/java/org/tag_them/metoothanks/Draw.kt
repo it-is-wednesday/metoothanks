@@ -17,7 +17,8 @@ class Draw : AppCompatActivity() {
 	val layout = draw_layout()
 	
 	val OPEN_IMAGE_REQUEST_CODE = 1
-	val WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 2
+	val EXPORT_IMAGE_REQUEST_CODE = 2
+	val SHARE_IMAGE_REQUEST_CODE = 3
 	
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -40,21 +41,46 @@ class Draw : AppCompatActivity() {
 				}.startActivity(OPEN_IMAGE_REQUEST_CODE)
 			}
 			action_add_text  -> {
-				// executed only if the result of the openTextInputDialog isn't null,
-				// meaning the user hit the positive button rather than the back button
 				openTextInputDialog {
 					layout.canvas_view.addText(it)
 					toast(it)
 				}
 			}
 			action_export    ->
-				if (checkExternalMedia()) {
+				if (checkExternalMedia())
 					ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-										    WRITE_EXTERNAL_STORAGE_REQUEST_CODE)
-				}
+										    EXPORT_IMAGE_REQUEST_CODE)
+			action_share     ->
+				if (checkExternalMedia())
+					ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+										    SHARE_IMAGE_REQUEST_CODE)
+			
 		}
 		
 		return super.onOptionsItemSelected(item)
+	}
+	
+	override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+		if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+			when (requestCode) {
+				EXPORT_IMAGE_REQUEST_CODE -> {
+					writeToStorage(layout.canvas_view)
+					snackbar("Saved to /metoothanks")
+				}
+				
+				SHARE_IMAGE_REQUEST_CODE  -> {
+					val uri = writeToStorage(layout.canvas_view, writeTemporarily = true)
+					
+					Intent().apply {
+						action = Intent.ACTION_SEND
+						putExtra(Intent.EXTRA_STREAM, uri)
+						type = "image/jpeg"
+					}.let {
+						Intent.createChooser(it, resources.getText(R.string.send_to)).startActivity(SHARE_IMAGE_REQUEST_CODE)
+					}
+				}
+				
+			}
 	}
 	
 	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -62,16 +88,6 @@ class Draw : AppCompatActivity() {
 			OPEN_IMAGE_REQUEST_CODE -> if (data != null)
 				layout.canvas_view.addImage(MediaStore.Images.Media.getBitmap(contentResolver, data.data))
 		}
-	}
-	
-	override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-		if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-			when (requestCode) {
-				WRITE_EXTERNAL_STORAGE_REQUEST_CODE -> {
-					writeToSD(layout.canvas_view)
-					snackbar("Saved to /metoothanks")
-				}
-			}
 	}
 	
 	fun Intent.startActivity(requestCode: Int) = startActivityForResult(this, requestCode)

@@ -6,7 +6,8 @@
 	<string name="ignore">lmao who cares</string>
 	
 	<string name="update_url">https://github.com/tag-them/metoothanks/releases</string>
-	
+
+	<string name="action_share">Share</string>
 	<string name="action_export">Export</string>
 	<string name="action_settings">Settings</string>
 	<string name="action_resize">Resize</string>
@@ -28,6 +29,8 @@
 	
 	<string name="ok_hand_sign_emoji">👌</string> <!--this is an emoji-->
 	<string name="confirmation_string">do it</string>
+	<string name="send_to">Send to</string>
+
 	<string name="title_activity_settings">Settings</string>
 	
 	<!-- Strings related to Settings -->
