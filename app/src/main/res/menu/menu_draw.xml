@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	tools:context="org.tag_them.metoothanks.Draw">
+	tools:context="org.tag_them.metoothanks.activities.Draw">
 	<!--<item-->
 	<!--android:id="@+id/action_settings"-->
 	<!--android:title="@string/action_settings"-->
@@ -16,15 +16,5 @@
 		android:id="@+id/action_export"
 		android:icon="@drawable/icon_export"
 		android:title="@string/action_export"
-		app:showAsAction="always" />
-	<item
-		android:id="@+id/action_add_text"
-		android:icon="@drawable/icon_add_text"
-		android:title="@string/action_add_text"
-		app:showAsAction="always" />
-	<item
-		android:id="@+id/action_add_image"
-		android:icon="@drawable/icon_add_image"
-		android:title="@string/action_add_image"
 		app:showAsAction="always" />
 </menu>

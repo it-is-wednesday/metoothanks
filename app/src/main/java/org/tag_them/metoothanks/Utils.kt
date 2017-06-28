@@ -7,10 +7,10 @@ import android.graphics.Color.TRANSPARENT
 import android.support.design.widget.Snackbar
 import android.text.TextPaint
 import android.util.TypedValue
-import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
 import org.jetbrains.anko.*
+import org.tag_them.metoothanks.activities.Draw
 
 
 fun fetchColor(ctx: Context, id: Int): Int {
@@ -21,17 +21,18 @@ fun fetchColor(ctx: Context, id: Int): Int {
 
 fun fitBitmap(bitmap: Bitmap, width: Int, height: Int): Bitmap {
 	var resultBitmap: Bitmap = bitmap
-	
-	if (resultBitmap.width > width) {
-		val ratio: Float = height.toFloat() / resultBitmap.width.toFloat()
-		println(ratio)
-		resultBitmap = Bitmap.createScaledBitmap(bitmap, width, (resultBitmap.height * ratio).toInt(), false)
-	}
-	
-	if (resultBitmap.height > height) {
-		val ratio: Float = height.toFloat() / resultBitmap.height.toFloat()
-		println("$ratio $height ${resultBitmap.height}")
-		resultBitmap = Bitmap.createScaledBitmap(bitmap, (resultBitmap.width * ratio).toInt(), height, false)
+	when {
+		resultBitmap.width > width   -> {
+			val ratio: Float = height.toFloat() / resultBitmap.width.toFloat()
+			println("$ratio, ${height.toFloat()}, ${resultBitmap.height.toFloat()}")
+			resultBitmap = Bitmap.createScaledBitmap(bitmap, width, (resultBitmap.height * ratio).toInt(), false)
+		}
+		
+		resultBitmap.height > height -> {
+			val ratio: Float = height.toFloat() / resultBitmap.height.toFloat()
+			println("$ratio $height ${resultBitmap.height}")
+			resultBitmap = Bitmap.createScaledBitmap(bitmap, (resultBitmap.width * ratio).toInt(), height, false)
+		}
 	}
 	
 	return resultBitmap
@@ -92,10 +93,7 @@ fun <T> ArrayList<T>.swapWithPrevItem(item: T) {
 }
 
 private fun <T> ArrayList<T>.swap(item: T, relativePosition: Int) {
-	try {
-		val index = indexOf(item)
+	val index = indexOf(item)
+	if (index + relativePosition in 0..size - 1)
 		set(index, set(index + relativePosition, item))
-	} catch (e: Exception) {
-		e.printStackTrace()
-	}
 }

@@ -138,7 +138,6 @@ class Text(text: String, canvasWidth: Int, hostView: CanvasView) :
 		
 		override fun toString(): String = text
 		
-		
 		val width: Int
 			get() = calculateTextWidth(text, fontSize)
 	}

@@ -10,17 +10,20 @@ import android.support.v7.widget.Toolbar
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import org.tag_them.metoothanks.items.*
+import org.tag_them.metoothanks.activities.Draw
+import org.tag_them.metoothanks.items.Image
+import org.tag_them.metoothanks.items.Item
+import org.tag_them.metoothanks.items.Text
+import java.io.Serializable
 
 val CORNER_RADIUS = 25f
 val EDGE_WIDTH = 19f
 
-class CanvasView : View {
-	
-	private val items = ArrayList<Item>()
+class CanvasView : View, Serializable {
 	private var selected_item: Item? = null
+	val items = ArrayList<Item>()
 	
-	lateinit var itemToolbar: Toolbar
+	lateinit var hostActivity: Draw
 	
 	constructor(context: Context?) : super(context)
 	
@@ -46,9 +49,13 @@ class CanvasView : View {
 	}
 	
 	
-	fun addImage(bitmap: Bitmap) =
+	fun addImage(bitmap: Bitmap, center: Boolean = false) =
 			// fitBitmap – resizing the image in case it's bigger than the screen
-			Image(fitBitmap(bitmap, width, height), hostView = this).addToItems()
+			Image(fitBitmap(bitmap, width, height), hostView = this).apply {
+				if (center)
+					move(this@CanvasView.width / 2 - this.width / 2,
+					     this@CanvasView.height / 2 - this.height / 2)
+			}.addToItems()
 	
 	fun addText(text: String) = Text(text, width, hostView = this).addToItems()
 	
@@ -159,21 +166,24 @@ class CanvasView : View {
 	
 	fun Item.select() {
 		selected_item = this
-		with(itemToolbar) {
-			menu.clear()
-			inflateMenu(R.menu.item_menu)
-			inflateMenu(item_menu_id)
-			setOnMenuItemClickListener {
-				when (it.itemId) {
-					R.id.action_item_delete        -> selected_item!!.removeFromItems()
-					R.id.action_item_move_forward  -> items.swapWithNextItem(selected_item!!)
-					R.id.action_item_move_backward -> items.swapWithPrevItem(selected_item!!)
-					else -> handleMenuItemClick(it)
+		with(hostActivity.layout) {
+			with(item_toolbar) {
+				menu.clear()
+				inflateMenu(R.menu.item_menu)
+				inflateMenu(item_menu_id)
+				setOnMenuItemClickListener {
+					when (it.itemId) {
+						R.id.action_item_delete        -> selected_item!!.removeFromItems()
+						R.id.action_item_move_forward  -> items.swapWithNextItem(selected_item!!)
+						R.id.action_item_move_backward -> items.swapWithPrevItem(selected_item!!)
+						else                           -> handleMenuItemClick(it)
+					}
+					
+					true
 				}
-				
-				true
+				visibility = Toolbar.VISIBLE
 			}
-			visibility = Toolbar.VISIBLE
+			adjustItemManagementToolbarY(this@CanvasView.bottom)
 		}
 		
 		invalidate()
@@ -181,10 +191,13 @@ class CanvasView : View {
 	
 	fun selectNone() {
 		selected_item = null
-		itemToolbar.visibility = Toolbar.INVISIBLE
+		with(hostActivity.layout) {
+			item_toolbar.visibility = Toolbar.INVISIBLE
+			adjustItemManagementToolbarY(bottom)
+		}
 	}
 	
-	fun Item.addToItems() = items.add(this).run { select(); invalidate();  }
+	fun Item.addToItems() = items.add(this).run { select(); invalidate(); }
 	
 	fun Item.removeFromItems() = items.remove(this).run { selectNone(); invalidate() }
 }

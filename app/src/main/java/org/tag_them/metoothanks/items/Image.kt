@@ -8,16 +8,14 @@ import android.view.Gravity
 import android.view.MenuItem
 import org.tag_them.metoothanks.CanvasView
 import org.tag_them.metoothanks.R
-import android.provider.MediaStore.Images.Media.getBitmap
 
 
 class Image(bitmap: Bitmap, hostView: CanvasView) : Item(hostView, bitmap.width, bitmap.height) {
-	
 	override fun handleMenuItemClick(item: MenuItem): Boolean {
 		when (item.itemId) {
 			R.id.action_image_rotate_clockwise        -> rotateImage(90f)
 			R.id.action_image_rotate_counterclockwise -> rotateImage(-90f)
-			else -> return false
+			else                                      -> return false
 		}
 		
 		hostView.postInvalidate()
@@ -34,6 +32,7 @@ class Image(bitmap: Bitmap, hostView: CanvasView) : Item(hostView, bitmap.width,
 	
 	override fun draw(canvas: Canvas) {
 		paint.alpha = 255
+		
 		with(bitmapDrawable) {
 			setBounds(left, top, right, bottom)
 			draw(canvas)
@@ -41,22 +40,24 @@ class Image(bitmap: Bitmap, hostView: CanvasView) : Item(hostView, bitmap.width,
 		hostView.postInvalidate()
 	}
 	
-	private fun rotateImage(degrees: Float) {
-		val matrix = Matrix()
-		matrix.postRotate(degrees)
-		
-		val bitmap = Bitmap.createBitmap(bitmapDrawable.bitmap, 0, 0,
-							   bitmapDrawable.intrinsicWidth, bitmapDrawable.intrinsicHeight, matrix, true)
-		
+	private fun rotateImage(angle: Float) {
 		swapWidthHeight()
-		
-		bitmapDrawable = BitmapDrawable(hostView.resources, bitmap)
+		bitmapDrawable = BitmapDrawable(hostView.resources, rotate(bitmapDrawable.bitmap, angle))
 		hostView.postInvalidate()
 	}
 	
 	private fun swapWidthHeight() {
-		val tmp = right
-		right = bottom
-		bottom = tmp
+		print("before: $width $height $bounds")
+		val tmp = height
+		bottom = top + width
+		right = left + tmp
+		println(", after: $width $height $bounds")
+	}
+	
+	fun rotate(source: Bitmap, angle: Float): Bitmap {
+		val matrix = Matrix()
+		matrix.postRotate(angle)
+		return Bitmap.createBitmap(source, 0, 0, source.width, source.height, matrix, true)
 	}
 }
+

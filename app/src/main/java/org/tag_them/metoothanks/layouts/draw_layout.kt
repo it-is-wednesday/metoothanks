@@ -4,20 +4,21 @@ import android.content.Context
 import android.graphics.Color
 import android.support.v7.widget.Toolbar
 import android.view.ViewManager
-import android.widget.TextView
 import org.jetbrains.anko.*
 import org.jetbrains.anko.appcompat.v7.toolbar
 import org.jetbrains.anko.custom.ankoView
 import org.tag_them.metoothanks.CanvasView
-import org.tag_them.metoothanks.Draw
+import org.tag_them.metoothanks.activities.Draw
 import org.tag_them.metoothanks.R
 
-class draw_layout() : AnkoComponent<Draw> {
+val ITEM_TOOLBAR_HEIGHT = 50
+
+class draw_layout : AnkoComponent<Draw> {
 	lateinit var canvas_view: CanvasView
 	lateinit var toolbar: Toolbar
+	lateinit var item_management_toolbar: Toolbar
 	lateinit var item_toolbar: Toolbar
 	
-	val ITEM_TOOLBAR_HEIGHT = 50
 	
 	override fun createView(ui: AnkoContext<Draw>) = with(ui) {
 		fun fetchColor(id: Int) = org.tag_them.metoothanks.fetchColor(ctx, id)
@@ -29,16 +30,30 @@ class draw_layout() : AnkoComponent<Draw> {
 				setTitleTextColor(Color.WHITE)
 			}
 			
-			canvas_view = canvasView {}
+			canvas_view = canvasView {
+				hostActivity = owner
+			}.lparams(width = matchParent, height = matchParent)
+			
+			item_management_toolbar = toolbar {
+				backgroundColor = Color.TRANSPARENT
+				inflateMenu(R.menu.item_management_menu)
+			}.lparams(width = wrapContent, height = dip(ITEM_TOOLBAR_HEIGHT))
 			
 			item_toolbar = toolbar {
-				y = lbottom - dip(ITEM_TOOLBAR_HEIGHT).toFloat()
+				y = lbottom - dip(ITEM_TOOLBAR_HEIGHT*2).toFloat()
 				backgroundColor = Color.TRANSPARENT
 				visibility = Toolbar.INVISIBLE
-			}.lparams(width = matchParent, height = dip(ITEM_TOOLBAR_HEIGHT))
+			}.lparams(width = wrapContent, height = dip(ITEM_TOOLBAR_HEIGHT))
 			
-			canvas_view.itemToolbar = item_toolbar
+			
+			adjustItemManagementToolbarY(lbottom)
 		}
+	}
+	
+	fun adjustItemManagementToolbarY(layoutBottom: Int) = with(item_management_toolbar) {
+		y = layoutBottom -
+		    if (item_toolbar.visibility == Toolbar.INVISIBLE) dip(ITEM_TOOLBAR_HEIGHT).toFloat()
+		    else dip(ITEM_TOOLBAR_HEIGHT * 2).toFloat()
 	}
 	
 	inline fun ViewManager.canvasView(init: (@AnkoViewDslMarker CanvasView).() -> Unit): CanvasView {

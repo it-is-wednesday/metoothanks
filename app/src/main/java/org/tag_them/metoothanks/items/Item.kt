@@ -4,7 +4,6 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.RectF
-import android.view.Menu
 import android.view.MenuItem
 import org.tag_them.metoothanks.CanvasView
 import org.tag_them.metoothanks.EDGE_WIDTH
