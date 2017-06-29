@@ -85,6 +85,7 @@ class start_layout : AnkoComponent<Welcome> {
 				alignParentBottom()
 				centerHorizontally()
 			}
+			
 			newVersionAvailable(update_notifier)
 		}
 	}

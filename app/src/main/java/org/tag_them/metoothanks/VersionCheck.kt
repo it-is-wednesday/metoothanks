@@ -24,16 +24,5 @@ fun newVersionAvailable(button: Button) =
 							R.string.update_availabe
 						else
 							R.string.update_not_available)
-
-//				context.alert(R.string.update_availabe) {
-//					positiveButton(R.string.update_now) {
-//						context.startActivity(Intent(
-//								Intent.ACTION_VIEW, Uri.parse("https://github.com/tag-them/metoothanks/releases/latest")))
-//					}
-//					negativeButton(R.string.ignore) {
-//						dialog ->
-//						dialog.dismiss()
-//					}
-//				}.show()
 			}
 		}.execute("https://github.com/tag-them/metoothanks/releases")
