@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
+import android.os.Build
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
@@ -37,10 +38,12 @@ class start_layout : AnkoComponent<Welcome> {
 		relativeLayout {
 			backgroundColor = accentColor
 			owner.window.apply {
-				addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-				clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-				statusBarColor = accentColor
-				navigationBarColor = accentColor
+				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+					addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+					clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+					statusBarColor = accentColor
+					navigationBarColor = accentColor
+				}
 			}
 			
 			imageView(R.drawable.metoothanks).lparams { alignParentTop() }
