@@ -134,17 +134,7 @@ class CanvasView : View, Serializable {
 								event.getY(it).toInt())
 						})
 						
-						for (index in pointers.indices) {
-							if (pointersGrip[index].x in 0..(selected_item!!.left + selected_item!!.width / 2))
-								selected_item?.left = pointers[index].x - pointersGripDistance[index].x
-							else
-								selected_item?.right = pointers[index].x + pointersGripDistance[index].x
-							
-							if (pointersGrip[index].y in 0..(selected_item!!.top + selected_item!!.height / 2))
-								selected_item?.top = pointers[index].y - pointersGripDistance[index].y
-							else
-								selected_item?.bottom = pointers[index].y + pointersGripDistance[index].y
-						}
+						selected_item?.resize(pointers,  pointersGrip, pointersGripDistance)
 					} else {
 						pointersGripDistance = Array(2) {
 							Point(calcGripX(event.getX(it).toInt()),

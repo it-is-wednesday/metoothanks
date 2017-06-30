@@ -43,6 +43,8 @@ class start_layout : AnkoComponent<Welcome> {
 				navigationBarColor = accentColor
 			}
 			
+			imageView(R.drawable.metoothanks).lparams { alignParentTop() }
+			
 			empty_canvas_button = button("empty canvas") {
 				id = EMPTY_CANVAS_ID
 				backgroundColor = fetchColor(ctx, R.attr.colorPrimary)
@@ -54,9 +56,7 @@ class start_layout : AnkoComponent<Welcome> {
 				// onClick is configured in Welcome
 			}.lparams {
 				width = BUTTON_WIDTH
-				topOf(LOAD_FROM_GALLERY_ID)
-				bottomMargin = BUTTON_SPACING
-				centerHorizontally()
+				centerInParent()
 			}
 			
 			load_from_gallery_button = button("load from gallery") {
@@ -70,7 +70,9 @@ class start_layout : AnkoComponent<Welcome> {
 				// onClick is configured in Welcome
 			}.lparams {
 				width = BUTTON_WIDTH
-				centerInParent()
+				bottomOf(EMPTY_CANVAS_ID)
+				topMargin = BUTTON_SPACING
+				centerHorizontally()
 			}
 			
 			val update_notifier = button(R.string.update_checking) {

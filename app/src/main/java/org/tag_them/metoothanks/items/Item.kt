@@ -1,27 +1,24 @@
 package org.tag_them.metoothanks.items
 
-import android.graphics.Canvas
-import android.graphics.Paint
-import android.graphics.Rect
-import android.graphics.RectF
+import android.graphics.*
 import android.view.MenuItem
 import org.tag_them.metoothanks.CanvasView
 import org.tag_them.metoothanks.EDGE_WIDTH
 
 abstract class Item(val hostView: CanvasView, width: Int, height: Int) {
-	var left = 0
+	open var left = 0
 		set(value) {
 			if (value < right - EDGE_WIDTH) field = value
 		}
-	var top = 0
+	open var top = 0
 		set(value) {
 			if (value < bottom - EDGE_WIDTH) field = value
 		}
-	var right = width
+	open var right = width
 		set(value) {
 			if (value > left + EDGE_WIDTH) field = value
 		}
-	var bottom = height
+	open var bottom = height
 		set(value) {
 			if (value > top + EDGE_WIDTH) field = value
 		}
@@ -49,5 +46,20 @@ abstract class Item(val hostView: CanvasView, width: Int, height: Int) {
 		bottom = y + (bottom - top)
 		left = x
 		top = y
+	}
+	
+	open fun resize(pointers: Array<Point>, pointersGrip: Array<Point>, pointersGripDistance: Array<Point>) {
+		for (index in pointers.indices) {
+			if (pointersGrip[index].x in 0..(left + width / 2))
+				left = pointers[index].x - pointersGripDistance[index].x
+			else
+				right = pointers[index].x + pointersGripDistance[index].x
+			
+			if (pointersGrip[index].y in 0..(top + height / 2))
+				top = pointers[index].y - pointersGripDistance[index].y
+			else
+				bottom = pointers[index].y + pointersGripDistance[index].y
+		}
+		
 	}
 }

@@ -7,6 +7,11 @@
 	<!--android:title="@string/action_settings"-->
 	<!--app:showAsAction="never" />-->
 	<item
+		android:id="@+id/action_close"
+		android:icon="@drawable/icon_close"
+		android:title="@string/action_close"
+		app:showAsAction="always" />
+	<item
 		android:id="@+id/action_share"
 		android:actionProviderClass="android.widget.ShareActionProvider"
 		android:icon="@drawable/icon_share"

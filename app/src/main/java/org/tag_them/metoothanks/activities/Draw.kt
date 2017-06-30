@@ -90,6 +90,7 @@ class Draw : AppCompatActivity() {
 						Intent.createChooser(it, resources.getText(R.string.send_to)).startActivity(SHARE_IMAGE_REQUEST_CODE)
 					}
 				}
+			action_close     -> close()
 		}
 		
 		return super.onOptionsItemSelected(item)
@@ -112,12 +113,14 @@ class Draw : AppCompatActivity() {
 		}
 	}
 	
-	override fun onBackPressed() {
+	fun close() {
 		alert(R.string.exit_confirmation) {
-			positiveButton(R.string.exit) { finish() }
+			positiveButton(R.string.exit) { super.onBackPressed() }
 			negativeButton(R.string.stay) { it.dismiss() }
 		}.show()
 	}
+	
+	override fun onBackPressed() = close()
 	
 	fun Intent.startActivity(requestCode: Int) = startActivityForResult(this, requestCode)
 }
