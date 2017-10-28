@@ -6,7 +6,7 @@
 
 	<string name="ignore">no thanks</string>
 
-	<string name="update_url">https://github.com/tag-them/metoothanks/releases</string>
+	<string name="update_url" translatable="false">https://github.com/tag-them/metoothanks/releases</string>
 
 	<string name="action_open">Open…</string>
 	<string name="action_save">Save</string>
@@ -23,8 +23,8 @@
 	<string name="action_item_move_backward">Move backward</string>
 	<string name="action_item_edit">Edit</string>
 
-	<string name="action_image_rotate_counterclockwise">Rotate left</string>
-	<string name="action_image_rotate_clockwise">Rotate right</string>
+	<string name="action_image_rotate_counterclockwise">Rotate counterclockwise</string>
+	<string name="action_image_rotate_clockwise">Rotate clockwise</string>
 
 	<string name="action_text_align_left">Align left</string>
 	<string name="action_text_align_right">Align right</string>
@@ -35,7 +35,7 @@
 	<string name="exit">yes let me out</string>
 	<string name="stay">no bring me back</string>
 
-	<string name="ok_hand_sign_emoji">👌</string>
+	<string name="ok_hand_sign_emoji" translatable="false">👌</string>
 	<string name="confirmation_string">do it</string>
 	<string name="send_to">Send to</string>
 
@@ -113,4 +113,7 @@
 
 	<string name="pref_title_vibrate">Vibrate</string>
 	<string name="title_activity_main">MainActivity</string>
+	<string name="load_from_gallery">load from gallery</string>
+	<string name="take_picture">take a picture</string>
+	<string name="empty_canvas">empty canvas</string>
 </resources>

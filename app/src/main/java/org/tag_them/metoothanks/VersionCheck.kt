@@ -8,7 +8,7 @@ import android.widget.Button
 import org.jetbrains.anko.alert
 import org.jsoup.Jsoup
 
-fun newVersionAvailable(button: Button) =
+fun checkForNewVersion(button: Button) =
 		object : AsyncTask<String, Unit, Boolean>() {
 			override fun doInBackground(vararg url: String?): Boolean =
 					// getting the latest version number from the right area on GitHub's releases page,

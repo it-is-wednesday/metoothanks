@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">metoothanks</string>
+	<string name="update_availabe">נראה שקיימת גרסה חדשה יותר. לטפו כאן בשביל לעדכן!</string>
+	<string name="update_not_available">אללה יש לך את הגרסה הכי חדשה</string>
+	<string name="update_checking">בודקת עדכונים...</string>
+	<string name="ignore">לא תודה</string>
+	<string name="action_open">פתיחה...</string>
+	<string name="action_save">שמירה</string>
+	<string name="action_close">סגירה</string>
+	<string name="action_share">שיתוף</string>
+	<string name="action_export">ייצוא</string>
+	<string name="action_settings">הגדרות</string>
+	<string name="action_add_text">הוספת טקסט</string>
+	<string name="action_add_image">הוספת תמונה</string>
+	<string name="action_delete">מחיקה</string>
+	<string name="action_item_move_forward">הזזה קדימה</string>
+	<string name="action_item_move_backward">הזזה אחורה</string>
+	<string name="action_item_edit">עריכה</string>
+	<string name="action_image_rotate_counterclockwise">סיבוב נגד כיוון השעון</string>
+	<string name="action_image_rotate_clockwise">סיבוב עם כיוון השעון</string>
+	<string name="action_text_align_left">יישור שמאלה</string>
+	<string name="action_text_align_right">יישור ימינה</string>
+	<string name="action_text_shrink">הקטנה</string>
+	<string name="action_text_enlarge">הגדלה</string>
+	<string name="exit_confirmation">האם זה היה מכוון?</string>
+	<string name="exit">כן יאללה ביי</string>
+	<string name="stay">לא לא חחחח אני רוצה לחזור</string>
+	<string name="confirmation_string">יאללה</string>
+	<string name="send_to">שליחה</string>
+	<string name="title_activity_settings">הגדרות</string>
+	<string name="pref_header_general">כללי</string>
+	<string name="load_from_gallery">טעינה מהגלריה</string>
+	<string name="take_picture">צילום תמונה</string>
+	<string name="empty_canvas">דף נקי</string>
+</resources>

@@ -3,6 +3,7 @@ package org.tag_them.metoothanks.activities
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -14,12 +15,15 @@ import org.jetbrains.anko.alert
 import org.jetbrains.anko.setContentView
 import org.tag_them.metoothanks.*
 import org.tag_them.metoothanks.R.id.*
-import org.tag_them.metoothanks.layouts.IMAGE_PATH
 import org.tag_them.metoothanks.layouts.draw_layout
 
 val OPEN_IMAGE_REQUEST_CODE = 1
 val EXPORT_IMAGE_REQUEST_CODE = 2
 val SHARE_IMAGE_REQUEST_CODE = 3
+
+val IMAGE_PATH = "image path"
+val BITMAP = "bitmap"
+val TAKE_PICTURE = "take picture"
 
 class Draw : AppCompatActivity() {
 	val layout = draw_layout()
@@ -30,10 +34,12 @@ class Draw : AppCompatActivity() {
 		setSupportActionBar(layout.toolbar)
 		
 		if (intent.hasExtra(IMAGE_PATH))
-			layout.canvas_view.post {
-				layout.canvas_view.addImage(MediaStore.Images.Media.getBitmap(contentResolver, Uri.parse(intent.getStringExtra(IMAGE_PATH))),
-								    center = true)
-			}
+			layout.canvas_view.post { layout.canvas_view.addImage(
+					MediaStore.Images.Media.getBitmap(contentResolver, Uri.parse(intent.getStringExtra(IMAGE_PATH))), center = true) }
+		if (intent.hasExtra(TAKE_PICTURE))
+		
+		if (intent.hasExtra(BITMAP))
+			layout.canvas_view.post { layout.canvas_view.addImage(intent.extras.get("data") as Bitmap) }
 		
 		layout.item_management_toolbar.setOnMenuItemClickListener {
 			when (it.itemId) {
@@ -76,8 +82,7 @@ class Draw : AppCompatActivity() {
 			
 			action_export    ->
 				if (checkExternalMedia())
-					ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-										    EXPORT_IMAGE_REQUEST_CODE)
+					requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, EXPORT_IMAGE_REQUEST_CODE)
 			action_share     ->
 				if (checkExternalMedia()) {
 					val uri = writeToStorage(layout.canvas_view, writeTemporarily = true)
@@ -102,6 +107,7 @@ class Draw : AppCompatActivity() {
 				EXPORT_IMAGE_REQUEST_CODE -> {
 					writeToStorage(layout.canvas_view)
 					snackbar("Saved to /metoothanks")
+					println("Saved to /metoothanks")
 				}
 			}
 	}

@@ -21,9 +21,9 @@ val EDGE_WIDTH = 19f
 
 class CanvasView : View, Serializable {
 	private var selected_item: Item? = null
-	val items = ArrayList<Item>()
+	private val items = ArrayList<Item>()
 	
-	lateinit var hostActivity: Draw
+	lateinit var host_activity: Draw
 	
 	constructor(context: Context?) : super(context)
 	
@@ -33,19 +33,17 @@ class CanvasView : View, Serializable {
 		isDrawingCacheEnabled = true
 	}
 	
-	val framePaint = Paint().apply {
+	private val frame_paint = Paint().apply {
 		style = Paint.Style.STROKE
 		strokeWidth = EDGE_WIDTH
 		color = fetchColor(context, R.attr.colorPrimary)
 	}
 	
 	override fun onDraw(canvas: Canvas) {
-		items.forEach {
-			it.draw(canvas)
-		}
+		items.forEach { it.draw(canvas) }
 		
 		if (selected_item != null)
-			canvas.drawRoundRect(selected_item!!.bounds, CORNER_RADIUS, CORNER_RADIUS, framePaint)
+			canvas.drawRoundRect(selected_item!!.bounds, CORNER_RADIUS, CORNER_RADIUS, frame_paint)
 	}
 	
 	
@@ -134,7 +132,7 @@ class CanvasView : View, Serializable {
 								event.getY(it).toInt())
 						})
 						
-						selected_item?.resize(pointers,  pointersGrip, pointersGripDistance)
+						selected_item?.resize(pointers, pointersGrip, pointersGripDistance)
 					} else {
 						pointersGripDistance = Array(2) {
 							Point(calcGripX(event.getX(it).toInt()),
@@ -156,7 +154,7 @@ class CanvasView : View, Serializable {
 	
 	fun Item.select() {
 		selected_item = this
-		with(hostActivity.layout) {
+		with(host_activity.layout) {
 			with(item_toolbar) {
 				menu.clear()
 				inflateMenu(R.menu.item_menu)
@@ -181,7 +179,7 @@ class CanvasView : View, Serializable {
 	
 	fun selectNone() {
 		selected_item = null
-		with(hostActivity.layout) {
+		with(host_activity.layout) {
 			item_toolbar.visibility = Toolbar.INVISIBLE
 			adjustItemManagementToolbarY(bottom)
 		}

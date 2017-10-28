@@ -44,15 +44,15 @@ class Image(bitmap: Bitmap, hostView: CanvasView) : Item(hostView, bitmap.width,
 		fun rotate(source: Bitmap, angle: Float): Bitmap =
 				Bitmap.createBitmap(source, 0, 0, source.width, source.height, Matrix().apply { postRotate(angle) }, true)
 		
+		fun swapWidthHeight() {
+			val tmp = height
+			bottom = top + width
+			right = left + tmp
+		}
+		
 		swapWidthHeight()
 		bitmapDrawable = BitmapDrawable(hostView.resources, rotate(bitmapDrawable.bitmap, angle))
 		hostView.postInvalidate()
-	}
-	
-	private fun swapWidthHeight() {
-		val tmp = height
-		bottom = top + width
-		right = left + tmp
 	}
 }
 

@@ -1,10 +1,13 @@
 package org.tag_them.metoothanks
 
+import android.Manifest
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Color.TRANSPARENT
 import android.support.design.widget.Snackbar
+import android.support.v4.app.ActivityCompat
 import android.text.TextPaint
 import android.util.TypedValue
 import android.view.WindowManager
@@ -81,19 +84,20 @@ fun Context.openTextInputDialog(initialText: String = "", action: (text_gotten: 
 	}.show()
 }
 
+fun Activity.requestPermission(permission: String, requestCode: Int) =
+		ActivityCompat.requestPermissions(this, arrayOf(permission), requestCode)
+
 fun Draw.snackbar(message: String) =
-		Snackbar.make(layout.canvas_view, message, Snackbar.LENGTH_LONG).setAction("Action", null).show()
+		Snackbar.make(layout.canvas_view, message, Snackbar.LENGTH_LONG)
+				.setAction("Action", null).show()
 
-fun <T> ArrayList<T>.swapWithNextItem(item: T) {
-	swap(item, 1)
-}
+fun <T> ArrayList<T>.swapWithNextItem(item: T) = swap(item, 1)
 
-fun <T> ArrayList<T>.swapWithPrevItem(item: T) {
-	swap(item, -1)
-}
+fun <T> ArrayList<T>.swapWithPrevItem(item: T) = swap(item, -1)
 
 private fun <T> ArrayList<T>.swap(item: T, relativePosition: Int) {
 	val index = indexOf(item)
 	if (index + relativePosition in 0..size - 1)
 		set(index, set(index + relativePosition, item))
 }
+

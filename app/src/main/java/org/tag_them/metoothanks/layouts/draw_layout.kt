@@ -31,7 +31,7 @@ class draw_layout : AnkoComponent<Draw> {
 			}
 			
 			canvas_view = canvasView {
-				hostActivity = owner
+				host_activity = owner
 			}.lparams(width = matchParent, height = matchParent)
 			
 			item_management_toolbar = toolbar {
