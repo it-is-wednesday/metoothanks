@@ -18,12 +18,12 @@ class Image(bitmap: Bitmap, hostView: CanvasView) : Item(hostView, bitmap.width,
 			else                                      -> return false
 		}
 		
-		hostView.postInvalidate()
+		canvas.postInvalidate()
 		
 		return true
 	}
 	
-	override val item_menu_id: Int = R.menu.item_image_menu
+	override val itemMenuID: Int = R.menu.item_image_menu
 	
 	var bitmapDrawable = BitmapDrawable(hostView.context.resources, bitmap).apply {
 		setBounds(0, 0, right, bottom)
@@ -37,7 +37,7 @@ class Image(bitmap: Bitmap, hostView: CanvasView) : Item(hostView, bitmap.width,
 			setBounds(left, top, right, bottom)
 			draw(canvas)
 		}
-		hostView.postInvalidate()
+		this.canvas.postInvalidate()
 	}
 	
 	private fun rotateImage(angle: Float) {
@@ -45,8 +45,8 @@ class Image(bitmap: Bitmap, hostView: CanvasView) : Item(hostView, bitmap.width,
 				Bitmap.createBitmap(source, 0, 0, source.width, source.height, Matrix().apply { postRotate(angle) }, true)
 		
 		swapWidthHeight()
-		bitmapDrawable = BitmapDrawable(hostView.resources, rotate(bitmapDrawable.bitmap, angle))
-		hostView.postInvalidate()
+		bitmapDrawable = BitmapDrawable(canvas.resources, rotate(bitmapDrawable.bitmap, angle))
+		canvas.postInvalidate()
 	}
 	
 	private fun swapWidthHeight() {

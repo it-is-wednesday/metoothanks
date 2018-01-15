@@ -4,16 +4,19 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
+import android.os.AsyncTask
 import android.os.Build
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jsoup.Jsoup
+import org.tag_them.metoothanks.BuildConfig
 import org.tag_them.metoothanks.R
 import org.tag_them.metoothanks.activities.Welcome
 import org.tag_them.metoothanks.fetchColor
-import org.tag_them.metoothanks.newVersionAvailable
+import java.lang.ref.WeakReference
 
 val IMAGE_PATH = "image path"
 val GITHUB_RELEASES_PAGE = "https://github.com/tag-them/metoothanks/releases/latest"
@@ -91,7 +94,28 @@ class start_layout : AnkoComponent<Welcome> {
 				centerHorizontally()
 			}
 			
-			newVersionAvailable(update_notifier)
+                        VersionCheck(WeakReference(update_notifier)).execute("https://github.com/tag-them/metoothanks/releases")
+		}
+	}
+ 
+	companion object {
+		class VersionCheck(private val button: WeakReference<Button>) : AsyncTask<String, Unit, Boolean>() {
+			override fun doInBackground(vararg url: String?): Boolean =
+				// getting the latest version number from the right area on GitHub's releases page,
+				// then comparing it to the local version number
+				Jsoup.connect(url[0]).get()
+					.getElementsByClass("release-meta")[0]
+					.getElementsByClass("css-truncate-target")[0]
+					.html() != BuildConfig.VERSION_NAME
+			
+			override fun onPostExecute(newVersionAvailable: Boolean) {
+				button.get()?.setText(
+					if (newVersionAvailable)
+						R.string.update_availabe
+					else
+						R.string.update_not_available
+				)
+			}
 		}
 	}
 }
