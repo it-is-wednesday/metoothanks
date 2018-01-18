@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import org.jetbrains.anko.setContentView
 import org.jetbrains.anko.startActivity
-import org.tag_them.metoothanks.items.DEFAULT_TEXT_SIZE
-import org.tag_them.metoothanks.items.fitToWidth
 import org.tag_them.metoothanks.layouts.IMAGE_PATH
 import org.tag_them.metoothanks.layouts.start_layout
 

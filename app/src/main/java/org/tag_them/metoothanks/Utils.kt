@@ -3,13 +3,16 @@ package org.tag_them.metoothanks
 import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.Color.TRANSPARENT
+import android.graphics.Color
 import android.support.design.widget.Snackbar
+import android.text.Editable
 import android.text.TextPaint
 import android.util.TypedValue
 import android.view.WindowManager
 import android.widget.EditText
-import org.jetbrains.anko.*
+import org.jetbrains.anko.bottomPadding
+import org.jetbrains.anko.dip
+import org.jetbrains.anko.padding
 import org.tag_them.metoothanks.activities.Edit
 
 
@@ -58,27 +61,23 @@ fun calculateTextHeight(text: String, textSize: Float): Int {
 }
 
 fun Context.openTextInputDialog(initialText: String = "", action: (text_gotten: String) -> Unit) {
-        var textbox: EditText? = null
-//        (this.alert {
-//                customView {
-//                        linearLayout {
-//                                padding = dip(20)
-//
-//                                textbox = editText(initialText).apply {
-//                                        setSingleLine(false)
-//                                        setBackgroundColor(TRANSPARENT)
-//                                        bottomPadding = dip(70)
-//                                }.lparams(width = org.jetbrains.anko.matchParent)
-//                        }
-//                }
-//
-//                positiveButton(R.string.ok_hand_sign_emoji) {
-//                        action(textbox?.text.toString())
-//                }
-//        }.build() as AlertDialog).apply {
-//                // makes the keyboard pop when the dialog is shown
-//                window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
-//        }.show()
+        val input = EditText(this).apply {
+                setText(initialText)
+                setSingleLine(false)
+                setBackgroundColor(Color.TRANSPARENT)
+                padding = dip(20)
+                bottomPadding = dip(70)
+        }
+        
+        val builder = AlertDialog.Builder(this)
+                .setView(input)
+                .setPositiveButton(R.string.ok_hand_sign_emoji) { _, _ ->
+                        action(input.text.toString())
+                }.create()
+        
+        // makes the keyboard pop when the dialog is shown
+        builder.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
+        builder.show()
 }
 
 fun Edit.snackbar(message: String) =
@@ -104,3 +103,4 @@ private fun <T> ArrayList<T>.swap(item: T, relativePosition: Int) {
  * returns the same array without its first element
  */
 fun <T> List<T>.rest(): List<T> = this.subList(1, size)
+

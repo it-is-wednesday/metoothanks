@@ -9,13 +9,10 @@ import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import clojure.`core$_`
 import kotlinx.android.synthetic.main.activity_edit.*
 import org.jetbrains.anko.alert
 import org.tag_them.metoothanks.*
 import org.tag_them.metoothanks.R.id.*
-import org.tag_them.metoothanks.items.DEFAULT_TEXT_SIZE
-import org.tag_them.metoothanks.items.fitToWidth
 
 val OPEN_IMAGE_REQUEST_CODE = 1
 val EXPORT_IMAGE_REQUEST_CODE = 2
@@ -28,20 +25,6 @@ class Edit : AppCompatActivity() {
                 setContentView(R.layout.activity_edit)
                 setSupportActionBar(toolbar)
                 supportActionBar?.title = resources.getString(R.string.app_name)
-                
-                
-                println(
-                        fitToWidth(
-                                200,
-                                "",
-                                "hello i like hello hi hah haha haha hhi".split(" "),
-                                DEFAULT_TEXT_SIZE
-                        )
-                )
-                
-                println(
-//                        utils.core.fitToWidth()
-                )
         }
         
         override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
