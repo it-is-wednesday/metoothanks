@@ -1,5 +1,6 @@
 package org.tag_them.metoothanks
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.os.SystemClock
@@ -81,15 +82,13 @@ class CanvasView : View,
         // the distance between the Y coordinate of the pointer and the item's top edge (used for dragging)
         private var gripDistanceFromTopEdge = 0
 
-        // an array of gripDistanceFromLeftEdge and gripDistanceFromTopEdge for two pointers (used for resize)
-        private var pointersGripDistance = PointPair({ Point() })
-
         // pointers' coordinates at the beginning of a resize
         private var pointersGrip = PointPair({ Point() })
 
         // bounds value at the beginning of the resize
         private var originalBounds = RectF()
 
+        @SuppressLint("ClickableViewAccessibility")
         override fun onTouchEvent(event: MotionEvent?): Boolean {
                 if (event == null) return false
 
