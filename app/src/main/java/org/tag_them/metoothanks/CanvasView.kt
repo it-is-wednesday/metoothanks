@@ -15,172 +15,170 @@ import org.tag_them.metoothanks.items.Item
 import org.tag_them.metoothanks.items.Text
 import java.io.Serializable
 
-val CORNER_RADIUS = 25f
-val EDGE_WIDTH = 19f
+const val CORNER_RADIUS = 25f
+const val EDGE_WIDTH = 19f
 
-class CanvasView : View,
-        Serializable {
-        private var selectedItem: Item? = null
-        private val items = ArrayList<Item>()
+class CanvasView : View, Serializable {
+    private var selectedItem: Item? = null
+    private val items = ArrayList<Item>()
 
-        lateinit var hostActivity: Edit
+    constructor(context: Context?) : super(context)
 
-        constructor(context: Context?) : super(context)
+    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
 
-        constructor(context: Context?,
-                    attrs: AttributeSet?) : super(context, attrs)
+    init {
+        isDrawingCacheEnabled = true
+    }
 
-        init {
-                isDrawingCacheEnabled = true
+    private val framePaint = Paint().apply {
+        style = Paint.Style.STROKE
+        strokeWidth = EDGE_WIDTH
+        color = fetchColor(context, R.attr.colorPrimary)
+    }
+
+    override fun onDraw(canvas: Canvas) {
+        items.forEach {
+            it.draw(canvas)
         }
 
-        private val framePaint = Paint().apply {
-                style = Paint.Style.STROKE
-                strokeWidth = EDGE_WIDTH
-                color = fetchColor(context, R.attr.colorPrimary)
-        }
-
-        override fun onDraw(canvas: Canvas) {
-                items.forEach {
-                        it.draw(canvas)
-                }
-
-                if (selectedItem != null)
-                        canvas.drawRoundRect(
-                                selectedItem!!.bounds, CORNER_RADIUS, CORNER_RADIUS, framePaint
-                        )
-        }
+        if (selectedItem != null)
+            canvas.drawRoundRect(selectedItem!!.bounds, CORNER_RADIUS, CORNER_RADIUS, framePaint)
+    }
 
 
-        fun addImage(bitmap: Bitmap,
-                     center: Boolean = false) =
-                // fitBitmap – resizing the image in case it's bigger than the screen
-                Image(fitBitmap(bitmap, width, height), hostView = this).apply {
-                        if (center)
-                                move(
-                                        this@CanvasView.width / 2 - this.width / 2,
-                                        this@CanvasView.height / 2 - this.height / 2
-                                )
-                }.addToItems()
+    fun addImage(bitmap: Bitmap, center: Boolean = false) =
+    // fitBitmap – resizing the image in case it's bigger than the screen
+            Image(fitBitmap(bitmap, width, height), hostView = this).apply {
+                if (center)
+                    move(this@CanvasView.width / 2 - this.width / 2,
+                         this@CanvasView.height / 2 - this.height / 2)
+            }.addToItems()
 
-        fun addText(text: String) = Text(text, width, hostView = this).addToItems()
+    fun addText(text: String) = Text(text, width, hostView = this).addToItems()
 
 
-        // if a touch is registered less than 101 milliseconds
-        // since the last touch, it will be treated as a drag/slide
-        private val MAX_ELAPSED_TIME_TO_DRAG = 100
+    // if a touch is registered less than 101 milliseconds
+    // since the last touch, it will be treated as a drag/slide
+    private val MAX_ELAPSED_TIME_TO_DRAG = 100
 
-        // last time the canvas was touched with one pointer
-        private var prevMoveTouchTime = SystemClock.elapsedRealtime()
+    // last time the canvas was touched with one pointer
+    private var prevMoveTouchTime = SystemClock.elapsedRealtime()
 
-        // last time the canvas was touched with two pointers
-        private var prevResizeTouchTime = SystemClock.elapsedRealtime()
+    // last time the canvas was touched with two pointers
+    private var prevResizeTouchTime = SystemClock.elapsedRealtime()
 
-        // the distance between the X coordinate of the pointer and the item's left edge (used for dragging)
-        private var gripDistanceFromLeftEdge = 0
+    // the distance between the X coordinate of the pointer and the item's left edge (used for dragging)
+    private var gripDistanceFromLeftEdge = 0
 
-        // the distance between the Y coordinate of the pointer and the item's top edge (used for dragging)
-        private var gripDistanceFromTopEdge = 0
+    // the distance between the Y coordinate of the pointer and the item's top edge (used for dragging)
+    private var gripDistanceFromTopEdge = 0
 
-        // pointers' coordinates at the beginning of a resize
-        private var pointersGrip = PointPair({ Point() })
+    // pointers' coordinates at the beginning of a resize
+    private var pointersGrip = PointPair({ Point() })
 
-        // bounds value at the beginning of the resize
-        private var originalBounds = RectF()
+    // bounds value at the beginning of the resize
+    private var originalBounds = RectF()
 
-        @SuppressLint("ClickableViewAccessibility")
-        override fun onTouchEvent(event: MotionEvent?): Boolean {
-                if (event == null) return false
+    @SuppressLint("ClickableViewAccessibility")
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        if (event == null) return false
 
-                val pointerCount = event.pointerCount
+        val pointerCount = event.pointerCount
 
-                when (pointerCount) {
-                        1 -> {
-                                val x = event.x.toInt()
-                                val y = event.y.toInt()
+        when (pointerCount) {
+            1 -> {
+                val x = event.x.toInt()
+                val y = event.y.toInt()
 
-                                // looking for a picture that got touched;
-                                // since the first pictures in the array get drawn first,
-                                // we iterate over the array from its end in order to get the
-                                // furthest picture (picture in the front)
-                                for (item in items.reversed()) {
-                                        if (SystemClock.elapsedRealtime() - prevMoveTouchTime < MAX_ELAPSED_TIME_TO_DRAG && selectedItem != null)
-                                                selectedItem?.move(x - gripDistanceFromLeftEdge, y - gripDistanceFromTopEdge)
-                                        else {
-                                                selectNone()
-                                                if (item.touched(x, y)) {
-                                                        gripDistanceFromLeftEdge = x - item.left
-                                                        gripDistanceFromTopEdge = y - item.top
+                // looking for a picture that got touched;
+                // since the first pictures in the array get drawn first,
+                // we iterate over the array from its end in order to get the
+                // furthest picture (picture in the front)
+                for (item in items.reversed()) {
+                    if (SystemClock.elapsedRealtime() -
+                            prevMoveTouchTime < MAX_ELAPSED_TIME_TO_DRAG && selectedItem != null)
+                        selectedItem?.move(
+                                x - gripDistanceFromLeftEdge, y - gripDistanceFromTopEdge)
+                    else {
+                        selectNone()
+                        if (item.touched(x, y)) {
+                            gripDistanceFromLeftEdge = x - item.left
+                            gripDistanceFromTopEdge = y - item.top
 
-                                                        item.select()
-                                                }
-                                        }
-
-                                        prevMoveTouchTime = SystemClock.elapsedRealtime()
-                                }
+                            item.select()
                         }
-                        2 -> {
-                                if (SystemClock.elapsedRealtime() - prevResizeTouchTime < MAX_ELAPSED_TIME_TO_DRAG) {
-                                        val pointers = PointPair(
-                                                init = { Point(event.getX(it).toInt(), event.getY(it).toInt()) }
-                                        )
+                    }
 
-                                        selectedItem?.resize(pointers, pointersGrip, originalBounds)
-                                } else {
-                                        pointersGrip = PointPair {
-                                                Point(
-                                                        event.getX(it).toInt(),
-                                                        event.getY(it).toInt()
-                                                )
-                                        }
+                    prevMoveTouchTime = SystemClock.elapsedRealtime()
+                }
+            }
+            2 -> {
+                if (SystemClock.elapsedRealtime() -
+                        prevResizeTouchTime < MAX_ELAPSED_TIME_TO_DRAG) {
+                    val pointers = PointPair(
+                            init = { Point(event.getX(it).toInt(), event.getY(it).toInt()) })
 
-                                        selectedItem?.let { originalBounds = it.bounds }
-                                }
+                    selectedItem?.resize(pointers, pointersGrip, originalBounds)
+                } else {
+                    pointersGrip = PointPair {
+                        Point(event.getX(it).toInt(), event.getY(it).toInt())
+                    }
 
-                                prevResizeTouchTime = SystemClock.elapsedRealtime()
-                        }
+                    selectedItem?.let { originalBounds = it.bounds }
                 }
 
-                invalidate()
-
-                return true
+                prevResizeTouchTime = SystemClock.elapsedRealtime()
+            }
         }
 
-        private fun Item.select() {
-                selectedItem = this
+        invalidate()
 
-                val clickListener = { item: MenuItem ->
-                        when (item.itemId) {
-                                R.id.action_item_delete        -> selectedItem!!.removeFromItems()
-                                R.id.action_item_move_forward  -> items.swapWithNextItem(selectedItem!!)
-                                R.id.action_item_move_backward -> items.swapWithPrevItem(selectedItem!!)
-                                else                           -> handleMenuItemClick(item)
-                        }
+        return true
+    }
 
-                        true
-                }
+    private fun Item.select() {
+        selectedItem = this
 
-                with(itemToolbar) {
-                        menu.clear()
-                        inflateMenu(R.menu.item_menu)
-                        inflateMenu(itemMenuID)
-                        setOnMenuItemClickListener(clickListener)
-                        visibility = Toolbar.VISIBLE
-                }
+        val clickListener = { item: MenuItem ->
+            when (item.itemId) {
+                R.id.action_item_delete        -> selectedItem!!.removeFromItems()
+                R.id.action_item_move_forward  -> items.swapWithNextItem(selectedItem!!)
+                R.id.action_item_move_backward -> items.swapWithPrevItem(selectedItem!!)
+                else                           -> handleMenuItemClick(item)
+            }
 
-                invalidate()
+            true
         }
 
-
-        fun selectNone() {
-                selectedItem = null
-                itemToolbar.menu.clear()
+        with(itemToolbar) {
+            menu.clear()
+            inflateMenu(R.menu.item_menu)
+            inflateMenu(itemMenuID)
+            setOnMenuItemClickListener(clickListener)
+            visibility = Toolbar.VISIBLE
         }
 
-        private fun Item.addToItems() = items.add(this).run { select(); invalidate(); }
+        invalidate()
+    }
 
-        private fun Item.removeFromItems() = items.remove(this).run { selectNone(); invalidate() }
 
-        private val itemToolbar
-                get() = (context as Edit).findViewById<Toolbar>(R.id.item_toolbar)
+    fun selectNone() {
+        selectedItem = null
+        itemToolbar.menu.clear()
+    }
+
+    private fun Item.addToItems() {
+        items.add(this)
+        this.select()
+        invalidate()
+    }
+
+    private fun Item.removeFromItems() {
+        items.remove(this)
+        selectNone()
+        invalidate()
+    }
+
+    private val itemToolbar
+        get() = (context as Edit).findViewById<Toolbar>(R.id.item_toolbar)
 }
