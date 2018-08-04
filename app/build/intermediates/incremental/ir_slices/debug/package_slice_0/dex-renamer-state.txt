@@ -1,0 +1,4 @@
+#Sat Aug 04 23:54:45 IDT 2018
+base.0=/home/maor/StudioProjects/metoothanks/app/build/intermediates/transforms/dexMerger/debug/51
+path.0=classes.dex
+renamed.0=classes.dex

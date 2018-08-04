@@ -1,0 +1,189 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:2:1-32:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/maor/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/3cff83a34369021753a5ff89377208b1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:design:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/design-28.0.0-beta01.aar/2aefa752ce3ccf5821e4f69a4154a146/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0-beta01.aar/58e43ea4177cf24ce7f54df18d5a3f86/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0-beta01.aar/0b5c1ec53f1b2cb3d2190ba551c6b52a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0-beta01.aar/3b8d35c27a2139398ac7dc1208604cc9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0-beta01.aar/3c7a54f35b3248570340f5e20acd8023/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0-beta01.aar/2a7a56fa9c34191898091ab79166dcef/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0-beta01.aar/b55806d67b48aee16849b2a935cdb806/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/transition-28.0.0-beta01.aar/a2eb7f333579c95ba03268c2af95b24c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0-beta01.aar/92b54cb628399fb6f5b8eba1e2053940/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0-beta01.aar/93d41369f2f3058c9cf7945e178b9b21/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0-beta01.aar/e9c216bd18c56d62e7b3ddc16c1d8c23/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0-beta01.aar/49b90c15be3ce3ec7ba1ee0fde4bd648/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/customview-28.0.0-beta01.aar/5b71be30c7a3bfcc9cc6cced9817c43c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0-beta01.aar/f4c24ccc9472c4f0b5729b268a4b313f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0-beta01.aar/fc8270eff6d47b3ffb2ae9cbad23983d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/loader-28.0.0-beta01.aar/4bf393ea4fa68bf6d1e19536f151cbd7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0-beta01.aar/3161350f04ba14b0315818e1517b855f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-beta01.aar/63634d205f3cf0fb086759d1a1b658f1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:cardview-v7:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0-beta01.aar/fa7e1938fb0a62c7f6aebd1ffb0bf08b/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/maor/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/4251c8aad563a1b23ccea67125d5aa9d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:versionedparcelable:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0-beta01.aar/7d67f878ef5ce4c5bce87316415ae224/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:interpolator:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0-beta01.aar/b2bf1bbaa080a00fbc5ba5d3a6a915b7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cursoradapter:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0-beta01.aar/a91460e9562fe67d8de19959c3ee9e14/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0-beta01.aar/c55b222b5e00aa012bf7a3f767b10ca5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0-beta01.aar/cd4fb1b32d3c139f99b698cb2c8b8441/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/print-28.0.0-beta01.aar/56fec998c48e935dfb16892a739a9c1d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/maor/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/c7cd72f4f68d273249e2cc28e4d69d54/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/maor/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/46a774b330972dd92ad9a46afc1c574e/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /home/maor/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0f65e41d6669a6d56330e34402529632/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:2:1-32:12
+	package
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:3:5-44
+		INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+		INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:2:1-32:12
+		INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:2:1-32:12
+		INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:5:5-81
+	android:name
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:5:22-78
+uses-permission#android.permission.INTERNET
+ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:6:5-67
+	android:name
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:6:22-64
+application
+ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:8:5-30:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/maor/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/3cff83a34369021753a5ff89377208b1/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/maor/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/3cff83a34369021753a5ff89377208b1/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/design-28.0.0-beta01.aar/2aefa752ce3ccf5821e4f69a4154a146/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/design-28.0.0-beta01.aar/2aefa752ce3ccf5821e4f69a4154a146/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-compat:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-beta01.aar/63634d205f3cf0fb086759d1a1b658f1/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-beta01.aar/63634d205f3cf0fb086759d1a1b658f1/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0-beta01.aar/7d67f878ef5ce4c5bce87316415ae224/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0-beta01.aar/7d67f878ef5ce4c5bce87316415ae224/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-beta01.aar/63634d205f3cf0fb086759d1a1b658f1/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:11:9-41
+	android:roundIcon
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:12:9-51
+	android:icon
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:10:9-43
+	android:allowBackup
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:9:9-35
+	android:theme
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:14:9-52
+activity#org.itiswednesday.metoothanks.activities.Welcome
+ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:15:9-20:20
+	android:name
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:15:19-53
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:16:13-19:29
+action#android.intent.action.MAIN
+ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:18:27-74
+activity#org.itiswednesday.metoothanks.activities.Edit
+ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:21:9-29:20
+	android:parentActivityName
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:24:13-61
+	android:label
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:23:13-56
+	android:theme
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:25:13-56
+	android:name
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:22:13-44
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:26:13-28:84
+	android:value
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:28:17-81
+	android:name
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml:27:17-63
+uses-sdk
+INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/maor/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/3cff83a34369021753a5ff89377208b1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/maor/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/3cff83a34369021753a5ff89377208b1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/design-28.0.0-beta01.aar/2aefa752ce3ccf5821e4f69a4154a146/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/design-28.0.0-beta01.aar/2aefa752ce3ccf5821e4f69a4154a146/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0-beta01.aar/58e43ea4177cf24ce7f54df18d5a3f86/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0-beta01.aar/58e43ea4177cf24ce7f54df18d5a3f86/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0-beta01.aar/0b5c1ec53f1b2cb3d2190ba551c6b52a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0-beta01.aar/0b5c1ec53f1b2cb3d2190ba551c6b52a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0-beta01.aar/3b8d35c27a2139398ac7dc1208604cc9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0-beta01.aar/3b8d35c27a2139398ac7dc1208604cc9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0-beta01.aar/3c7a54f35b3248570340f5e20acd8023/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0-beta01.aar/3c7a54f35b3248570340f5e20acd8023/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0-beta01.aar/2a7a56fa9c34191898091ab79166dcef/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0-beta01.aar/2a7a56fa9c34191898091ab79166dcef/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0-beta01.aar/b55806d67b48aee16849b2a935cdb806/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0-beta01.aar/b55806d67b48aee16849b2a935cdb806/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/transition-28.0.0-beta01.aar/a2eb7f333579c95ba03268c2af95b24c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/transition-28.0.0-beta01.aar/a2eb7f333579c95ba03268c2af95b24c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0-beta01.aar/92b54cb628399fb6f5b8eba1e2053940/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0-beta01.aar/92b54cb628399fb6f5b8eba1e2053940/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0-beta01.aar/93d41369f2f3058c9cf7945e178b9b21/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0-beta01.aar/93d41369f2f3058c9cf7945e178b9b21/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0-beta01.aar/e9c216bd18c56d62e7b3ddc16c1d8c23/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0-beta01.aar/e9c216bd18c56d62e7b3ddc16c1d8c23/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0-beta01.aar/49b90c15be3ce3ec7ba1ee0fde4bd648/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0-beta01.aar/49b90c15be3ce3ec7ba1ee0fde4bd648/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/customview-28.0.0-beta01.aar/5b71be30c7a3bfcc9cc6cced9817c43c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/customview-28.0.0-beta01.aar/5b71be30c7a3bfcc9cc6cced9817c43c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0-beta01.aar/f4c24ccc9472c4f0b5729b268a4b313f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0-beta01.aar/f4c24ccc9472c4f0b5729b268a4b313f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0-beta01.aar/fc8270eff6d47b3ffb2ae9cbad23983d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0-beta01.aar/fc8270eff6d47b3ffb2ae9cbad23983d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/loader-28.0.0-beta01.aar/4bf393ea4fa68bf6d1e19536f151cbd7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/loader-28.0.0-beta01.aar/4bf393ea4fa68bf6d1e19536f151cbd7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0-beta01.aar/3161350f04ba14b0315818e1517b855f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0-beta01.aar/3161350f04ba14b0315818e1517b855f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-beta01.aar/63634d205f3cf0fb086759d1a1b658f1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-beta01.aar/63634d205f3cf0fb086759d1a1b658f1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0-beta01.aar/fa7e1938fb0a62c7f6aebd1ffb0bf08b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0-beta01.aar/fa7e1938fb0a62c7f6aebd1ffb0bf08b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/maor/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/4251c8aad563a1b23ccea67125d5aa9d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/maor/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/4251c8aad563a1b23ccea67125d5aa9d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0-beta01.aar/7d67f878ef5ce4c5bce87316415ae224/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0-beta01.aar/7d67f878ef5ce4c5bce87316415ae224/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0-beta01.aar/b2bf1bbaa080a00fbc5ba5d3a6a915b7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0-beta01.aar/b2bf1bbaa080a00fbc5ba5d3a6a915b7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0-beta01.aar/a91460e9562fe67d8de19959c3ee9e14/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0-beta01.aar/a91460e9562fe67d8de19959c3ee9e14/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0-beta01.aar/c55b222b5e00aa012bf7a3f767b10ca5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0-beta01.aar/c55b222b5e00aa012bf7a3f767b10ca5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0-beta01.aar/cd4fb1b32d3c139f99b698cb2c8b8441/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0-beta01.aar/cd4fb1b32d3c139f99b698cb2c8b8441/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/print-28.0.0-beta01.aar/56fec998c48e935dfb16892a739a9c1d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0-beta01] /home/maor/.gradle/caches/transforms-1/files-1.1/print-28.0.0-beta01.aar/56fec998c48e935dfb16892a739a9c1d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/maor/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/c7cd72f4f68d273249e2cc28e4d69d54/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/maor/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/c7cd72f4f68d273249e2cc28e4d69d54/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/maor/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/46a774b330972dd92ad9a46afc1c574e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/maor/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/46a774b330972dd92ad9a46afc1c574e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /home/maor/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0f65e41d6669a6d56330e34402529632/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /home/maor/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0f65e41d6669a6d56330e34402529632/AndroidManifest.xml:20:5-44
+INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+		INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+		ADDED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml
+		INJECTED from /home/maor/StudioProjects/metoothanks/app/src/main/AndroidManifest.xml

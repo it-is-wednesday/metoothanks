@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/maor/StudioProjects/metoothanks/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "map": [
+                {
+                    "source": "/home/maor/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0-beta01.aar/58e43ea4177cf24ce7f54df18d5a3f86/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                }
+            ]
+        }
+    ]
+}
