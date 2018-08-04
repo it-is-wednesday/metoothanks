@@ -1,10 +1,10 @@
-package org.tag_them.metoothanks
+package org.itiswednesday.metoothanks
 
 import org.junit.Test
 
 import org.junit.Assert.*
-import org.tag_them.metoothanks.items.DEFAULT_TEXT_SIZE
-import org.tag_them.metoothanks.items.fitToWidth
+import org.itiswednesday.metoothanks.items.DEFAULT_TEXT_SIZE
+import org.itiswednesday.metoothanks.items.fitToWidth
 
 /**
  * Example local unit test, which will execute on the development machine (host).

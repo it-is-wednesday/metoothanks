@@ -1,4 +1,4 @@
-package org.tag_them.metoothanks
+package org.itiswednesday.metoothanks
 
 import android.os.Environment
 import android.media.MediaScannerConnection

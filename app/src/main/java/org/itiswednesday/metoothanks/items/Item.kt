@@ -1,10 +1,10 @@
-package org.tag_them.metoothanks.items
+package org.itiswednesday.metoothanks.items
 
 import android.graphics.*
 import android.view.MenuItem
-import org.tag_them.metoothanks.CanvasView
-import org.tag_them.metoothanks.EDGE_WIDTH
-import org.tag_them.metoothanks.PointPair
+import org.itiswednesday.metoothanks.CanvasView
+import org.itiswednesday.metoothanks.EDGE_WIDTH
+import org.itiswednesday.metoothanks.PointPair
 
 abstract class Item(val canvas: CanvasView, width: Int, height: Int) {
     open var left = 0

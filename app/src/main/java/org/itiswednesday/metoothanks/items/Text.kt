@@ -1,10 +1,10 @@
-package org.tag_them.metoothanks.items
+package org.itiswednesday.metoothanks.items
 
 import android.graphics.Canvas
 import android.graphics.Point
 import android.text.TextPaint
 import android.view.MenuItem
-import org.tag_them.metoothanks.*
+import org.itiswednesday.metoothanks.*
 
 
 const val DEFAULT_TEXT_SIZE = 120f

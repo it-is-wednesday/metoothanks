@@ -1,4 +1,4 @@
-package org.tag_them.metoothanks.items
+package org.itiswednesday.metoothanks.items
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -6,8 +6,8 @@ import android.graphics.Matrix
 import android.graphics.drawable.BitmapDrawable
 import android.view.Gravity
 import android.view.MenuItem
-import org.tag_them.metoothanks.CanvasView
-import org.tag_them.metoothanks.R
+import org.itiswednesday.metoothanks.CanvasView
+import org.itiswednesday.metoothanks.R
 
 
 class Image(bitmap: Bitmap, hostView: CanvasView) : Item(hostView, bitmap.width, bitmap.height) {

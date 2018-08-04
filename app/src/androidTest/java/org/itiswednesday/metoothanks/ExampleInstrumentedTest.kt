@@ -1,4 +1,4 @@
-package org.tag_them.metoothanks
+package org.itiswednesday.metoothanks
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

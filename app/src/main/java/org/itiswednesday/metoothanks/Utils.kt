@@ -1,4 +1,4 @@
-package org.tag_them.metoothanks
+package org.itiswednesday.metoothanks
 
 import android.app.AlertDialog
 import android.content.Context
@@ -10,10 +10,7 @@ import android.text.TextPaint
 import android.util.TypedValue
 import android.view.WindowManager
 import android.widget.EditText
-import org.jetbrains.anko.bottomPadding
-import org.jetbrains.anko.dip
-import org.jetbrains.anko.padding
-import org.tag_them.metoothanks.activities.Edit
+import org.itiswednesday.metoothanks.activities.Edit
 import kotlin.math.sqrt
 
 
@@ -61,8 +58,7 @@ fun Context.openTextInputDialog(initialText: String = "", action: (text_gotten: 
         setText(initialText)
         setSingleLine(false)
         setBackgroundColor(Color.TRANSPARENT)
-        padding = dip(20)
-        bottomPadding = dip(70)
+        setPadding(20, 20, 20, 20)
     }
 
     val builder = AlertDialog.Builder(this)

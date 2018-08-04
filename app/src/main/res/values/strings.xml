@@ -4,6 +4,9 @@
     <string name="update_not_available">Grats, you\'re running the latest version.</string>
     <string name="update_checking">Checking for updates…</string>
 
+    <string name="button_empty_canvas">empty canvas</string>
+    <string name="button_load_from_gallery">load from gallery</string>
+
     <string name="ignore">no thanks</string>
 
     <string name="update_url">https://github.com/tag-them/metoothanks/releases</string>
@@ -32,9 +35,9 @@
     <string name="action_text_shrink">Decrease font size</string>
     <string name="action_text_enlarge">Increase font size</string>
 
-    <string name="exit_confirmation">Was this intentional?</string>
-    <string name="exit">yes let me out</string>
-    <string name="stay">no bring me back</string>
+    <string name="exit_confirmation">Really quit?</string>
+    <string name="choose_exit">ye</string>
+    <string name="choose_stay">no</string>
 
     <string name="ok_hand_sign_emoji">👌</string>
     <string name="confirmation_string">do it</string>

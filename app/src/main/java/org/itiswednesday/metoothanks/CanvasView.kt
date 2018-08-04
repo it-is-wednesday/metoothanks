@@ -1,4 +1,4 @@
-package org.tag_them.metoothanks
+package org.itiswednesday.metoothanks
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,14 +9,17 @@ import android.util.AttributeSet
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
-import org.tag_them.metoothanks.activities.Edit
-import org.tag_them.metoothanks.items.Image
-import org.tag_them.metoothanks.items.Item
-import org.tag_them.metoothanks.items.Text
+import org.itiswednesday.metoothanks.activities.Edit
+import org.itiswednesday.metoothanks.items.Image
+import org.itiswednesday.metoothanks.items.Item
+import org.itiswednesday.metoothanks.items.Text
 import java.io.Serializable
+import android.graphics.DashPathEffect
+
+
 
 const val CORNER_RADIUS = 25f
-const val EDGE_WIDTH = 19f
+const val EDGE_WIDTH = 10f
 
 class CanvasView : View, Serializable {
     private var selectedItem: Item? = null
@@ -26,14 +29,11 @@ class CanvasView : View, Serializable {
 
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
 
-    init {
-        isDrawingCacheEnabled = true
-    }
-
     private val framePaint = Paint().apply {
         style = Paint.Style.STROKE
         strokeWidth = EDGE_WIDTH
         color = fetchColor(context, R.attr.colorPrimary)
+        pathEffect = DashPathEffect(floatArrayOf(50f, 50f), 0f)
     }
 
     override fun onDraw(canvas: Canvas) {

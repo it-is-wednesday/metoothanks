@@ -1,40 +1,49 @@
-package org.tag_them.metoothanks.activities
+package org.itiswednesday.metoothanks.activities
 
 import android.Manifest
+import android.app.ActionBar
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.app.ActivityCompat
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
+import android.view.*
 import kotlinx.android.synthetic.main.activity_edit.*
-import org.jetbrains.anko.alert
-import org.tag_them.metoothanks.*
-import org.tag_them.metoothanks.R.id.*
+import org.itiswednesday.metoothanks.*
+import org.itiswednesday.metoothanks.R.id.*
+
 
 const val OPEN_IMAGE_REQUEST_CODE = 1
 const val EXPORT_IMAGE_REQUEST_CODE = 2
 const val SHARE_IMAGE_REQUEST_CODE = 3
 
 class Edit : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit)
         setSupportActionBar(toolbar)
         supportActionBar?.title = resources.getString(R.string.app_name)
+
+        canvas.post {
+            intent?.extras?.let {
+                val uri = Uri.parse(it.get(IMAGE_PATH).toString())
+                canvas.addImage(bitmapFromUri(uri))
+            }
+        }
     }
+
+    private fun bitmapFromUri(uri: Uri): Bitmap =
+            MediaStore.Images.Media.getBitmap(contentResolver, uri)
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         when (requestCode) {
-            OPEN_IMAGE_REQUEST_CODE -> if (data != null) {
-                val image = MediaStore.Images.Media.getBitmap(
-                        contentResolver,
-                        data.data)
-                canvas.addImage(image)
-            }
+            OPEN_IMAGE_REQUEST_CODE ->
+                if (data != null)
+                    canvas.addImage(bitmapFromUri(data.data))
         }
     }
 
@@ -89,9 +98,10 @@ class Edit : AppCompatActivity() {
     override fun onBackPressed() = close()
 
     private fun close() {
-        alert(R.string.exit_confirmation) {
-            positiveButton(R.string.exit) { super.onBackPressed() }
-            negativeButton(R.string.stay) { it.dismiss() }
+        AlertDialog.Builder(this).apply {
+            setMessage(R.string.exit_confirmation)
+            setPositiveButton(R.string.choose_exit) { _, _ -> super.onBackPressed() }
+            setNegativeButton(R.string.choose_stay) { _, _ -> }
         }.show()
     }
 
